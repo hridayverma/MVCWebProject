@@ -82,7 +82,7 @@ namespace MVCWebProject.Controllers
         public ViewResult ViewEmployee()
         {
             var emp = GetEmployee();
-            return View();//passing employee model object with view
+            return View(emp);//passing employee model object with view
         }
 
 
