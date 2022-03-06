@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Passing Data Using Parameters </h2>
+<form method="post">
+    <input type="text" name="fname" /><br /><br />
+    <input type="text" name="lname" /><br /><br />
+    <input type="submit" value="Submit" /><br /><br />
+</form>
+
+
+<h2>Passing Data using  Request</h2>
+@using (Html.BeginForm("PostUsingRequest", "PassingData", FormMethod.Post))
+{
+
+    <input type="text" name="fname" />
+    <br />
+    <br />
+    <input type="text" name="lname" />
+    <br />
+    <br />
+    <input type="submit" value="Submit" />
+    <br />
+    <br />
+}
+<h2>Passing Data using  FormCollection</h2>
+@using (Html.BeginForm("PostUsingForm","PassingData")){
+
+    <input type="text" name="fname" />
+    <br />
+    <br />
+    <input type="text" name="lname" />
+    <br />
+    <br />
+    <input type="submit" value="Submit" />
+    <br />
+    <br />
+}
+
