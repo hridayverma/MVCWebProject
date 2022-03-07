@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Working with HTML Helpers</h2>
+<h3>City List</h3>
+<ul>
+    <li>Noida</li>
+    <li>Delhi</li>
+    <li>Mumbai</li>
+    <li>Lucknow</li>
+    <li>Patna</li>
+</ul>
+@*Defining HTML Helper*@
+
+@helper GenerateList(string[] list)
+{
+
+    <ul>
+        @foreach (var item in list)
+        {
+            <li>@item</li>
+        }
+    </ul>
+}
+
+
+@{ var cities = new string[] { "Noida", "Delhi", "Mumbai", "Patna" };}
+<h3>City List</h3>
+@*<ul>
+        @foreach (var item in cities)
+        {
+            <li>@item</li>
+        }
+    </ul>*@
+@*generating list using create helper*@
+@GenerateList(cities)
+
+
+@{ var country = new string[] { "India", "USA", "China", "Russia" };}
+<h3>Country List</h3>
+@*<ul>
+        @foreach (var item in country)
+        {
+            <li>@item</li>
+        }
+    </ul>*@
+
+@GenerateList(country)
+
+@*@{ var courses = new string[] { "C#", "PHP", "Java", "React" };}*@
+<h3>Courses List</h3>
+@GenerateList(ViewBag.Courses)
+
+
